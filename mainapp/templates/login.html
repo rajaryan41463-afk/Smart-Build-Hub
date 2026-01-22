@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Login page
+{% endblock %}
+
+
+
+{% block main %}
+
+
+<div class="row" style="background-image: url('{% static 'img/contact bg1.jpg' %}'); background-repeat:no-repeat; background-size:cover;"
+                >">
+    
+    <div class="col-sm-10 mx-auto">
+        <div class="row " style="margin-top: 100px; margin-bottom: 100px;">
+        <div class="col-sm-2  rounded-4" style="margin-left: 190px; "
+     >
+    
+    <!-- <img src="{% static 'img/login.jpg' %}" alt="" style="height: 500px; width: 500px;" class="rounded-4"> -->
+    </div>
+            
+            <div class="col-sm-4 rounded-4" style=" background-color: transparent;"
+                >
+                {% if messages %}
+                {% for m in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{m}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <form method="post" action="" style=" margin-top: 30px;" class="ms-3">
+                    {% csrf_token %}
+                    <img src="{% static 'img/Logo.png' %}" alt="" style="height: 50px;">
+                    
+                    <br> <br>
+                    <h3 class="text-center" style="font-family: italic;"><strong>Login Here</strong></h3> <br>
+                    Email
+                    <input type="name" name="username" id="n" placeholder="username,email or mobile number"
+                        class="rounded-2 form-control " style=" height: 40px; border: 1px;" required> <br>
+
+                    Password
+                    <input type="password" class="form-control " name="password" required placeholder="password"> <br>
+                    <button type="submit"
+                        style=" height: 40px; margin-bottom: 40px; background-color: green; border: 0px;"
+                        class="rounded-2 text-light form-control">Submit</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

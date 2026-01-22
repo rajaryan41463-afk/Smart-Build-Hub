@@ -1,0 +1,352 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- [Head] start -->
+
+<head>
+  <title>Homeowner dash</title>
+  <!-- [Meta] -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- font awsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- font awsome -->
+
+  <!-- [Favicon] icon -->
+  <link rel="icon" href="" type="image/x-icon">
+
+  <!-- data tables css -->
+  <link rel="stylesheet" href="{% static 'admin/assets/css/plugins/dataTables.bootstrap5.min.css' %}">
+  <!-- [Google Font] Family -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+    id="main-font-link">
+  <!-- [Tabler Icons] https://tablericons.com -->
+  <link rel="stylesheet" href="{% static 'admin/assets/fonts/tabler-icons.min.css' %}">
+  <!-- [Feather Icons] https://feathericons.com -->
+  <link rel="stylesheet" href="{% static 'admin/assets/fonts/feather.css' %}">
+  <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+  <link rel="stylesheet" href="{% static 'admin/assets/fonts/fontawesome.css' %}">
+  <!-- [Material Icons] https://fonts.google.com/icons -->
+  <link rel="stylesheet" href="{% static 'admin/assets/fonts/material.css' %}">
+  <!-- [Template CSS Files] -->
+  <link rel="stylesheet" href="{% static 'admin/assets/css/style.css' %}" id="main-style-link">
+  <link rel="stylesheet" href="{% static 'admin/assets/css/style-preset.css' %}">
+
+</head>
+<!-- [Head] end -->
+<!-- [Body] Start -->
+
+<body data-pc-preset="preset-1" data-pc-direction="ltr" data-pc-theme="light" >
+  <!-- [ Pre-loader ] start -->
+  <div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+  <!-- [ Sidebar Menu ] start -->
+  <nav class="pc-sidebar " style="background-color: #fbdbc4;">
+    <div class="navbar-wrapper">
+      <div class="m-header">
+        <a href="{% url 'index' %}" class="b-brand text-primary">
+          <!-- ========   Change your logo from here   ============ -->
+          <img src="{% static 'img/smartbuild_Logo_dark.png' %}" alt="" style="height: 70px;">
+        </a>
+      </div>
+      <div class="navbar-content">
+        <ul class="pc-navbar">
+          <li class="pc-item">
+            <a href="{% url 'homeownerdash' %}" class="pc-link" style="text-decoration: none;">
+
+              <div class="text-2xl font-bold text-[#ff6900] mb-6"><img src="{% static 'img/logo.png' %}"
+                  style="height: 50px;; " alt="" class="me-3"> <span style="color: #ff6900;">Dash...</span></div>
+            </a>
+          </li>
+
+          <li class="pc-item pc-caption">
+            <label>Manage</label>
+            <i class="ti ti-dashboard"></i>
+          </li>
+
+
+
+          <div class="accordion" id="accordionExample" >
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne" style="background-color: #fbdbc4;">
+                  <i class="fa-solid fa-list-check"></i> Projects
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body" style="background-color: #fbdbc4;">
+                  <ul>
+                    <li><a href="{% url 'homeownerviewproject' %}" style="text-decoration: none; ">view project</a></li><br>
+                    <li><a href="{% url 'addproject' %}" style="text-decoration: none; ">Add Projects</a></li><br>
+                    <li><a href="{% url 'runningprojects' %}" style="text-decoration: none; ">Running Project</a></li><br>
+                    <li><a href="{% url 'homeownercompletedprojects' %}" style="text-decoration: none; ">Completed Project</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #fbdbc4;">
+                  <i class="fa-solid fa-user"></i> Manage Contractor
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body" style="background-color: #fbdbc4;">
+                  <ul>
+                    <li><a href=""  style="text-decoration: none;">Today Updates</a></li><br>
+                    <li> <a href="" style="text-decoration: none;">Contractor Detail</a></li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color: #fbdbc4;">
+                  <i class="fa-brands fa-cc-amazon-pay"></i> Payments Status
+                </button>
+              </h2>             
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body" style="background-color: #fbdbc4;">
+                  <ul>
+                    <li><a href="" style="text-decoration: none;"> paid</a></li><br>
+                    <li><a href="" style="text-decoration: none;">Due Payment</a></li> <br>
+                    <li><a href="" style="text-decoration: none;">Total project Payment</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <li class="pc-item">
+            <a href="{% url 'homeownerprofile' %}" class="pc-link" style="text-decoration: none;">
+              <span class="pc-micon"><i class="fa-solid fa-user-check"></i></span>
+              <span class="pc-mtext" > View profile</span>
+            </a>
+          </li>
+          <li class="pc-item">
+            <a href="" class="pc-link" style="text-decoration: none;">
+              <span class="pc-micon"><i class="ti ti-typography"></i></span>
+              <span class="pc-mtext">Enquiries</span>
+            </a>
+          </li>
+          <!-- <li class="pc-item">
+            <a href="" class="pc-link">
+              <span class="pc-micon"><i class="ti ti-color-swatch"></i></span>
+              <span class="pc-mtext">Color</span>
+            </a>
+          </li> -->
+
+          <li class="pc-item pc-caption">
+            <label>Actions</label>
+            <i class="ti ti-news"></i>
+          </li>
+          <li class="pc-item">
+            <a href="{% url 'homeownerpass' %}" class="pc-link" style="text-decoration: none;">
+              <span class="pc-micon"><i class="ti ti-lock"></i></span>
+              <span class="pc-mtext">Change Password</span>
+            </a>
+          </li>
+          <li class="pc-item">
+            <a href="{% url 'homeownerlogout' %}" class="pc-link" style="text-decoration: none;">
+              <span class="pc-micon"> <i class="ti ti-power"></i></span>
+              <span class="pc-mtext">Logout</span>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <!-- [ Sidebar Menu ] end --> <!-- [ Header Topbar ] start -->
+  <header class="pc-header" style="background-color: #fbdbc4;">
+    <div class="header-wrapper"> <!-- [Mobile Media Block] start -->
+      <div class="me-auto pc-mob-drp">
+        <ul class="list-unstyled">
+          <!-- ======= Menu collapse Icon ===== -->
+          <li class="pc-h-item pc-sidebar-collapse">
+            <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
+              <i class="ti ti-menu-2"></i>
+            </a>
+          </li>
+          <li class="pc-h-item pc-sidebar-popup">
+            <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
+              <i class="ti ti-menu-2"></i>
+            </a>
+          </li>
+          <li class="dropdown pc-h-item d-inline-flex d-md-none">
+            <a class="pc-head-link dropdown-toggle arrow-none m-0" data-bs-toggle="dropdown" href="#" role="button"
+              aria-haspopup="false" aria-expanded="false">
+              <i class="ti ti-search"></i>
+            </a>
+            <div class="dropdown-menu pc-h-dropdown drp-search">
+              <form class="px-3">
+                <div class="form-group mb-0 d-flex align-items-center">
+                  <i data-feather="search"></i>
+                  <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . .">
+
+                </div>
+              </form>
+            </div>
+          </li>
+          <!-- <li class="pc-h-item d-none d-md-inline-flex"> -->
+            <!-- <form class="header-search"> -->
+              <!-- <i data-feather="search" class="icon-search"></i> -->
+              <!-- <input type="search" class="form-control" placeholder="Search here. . ."> -->
+            </form>
+          </li>
+        </ul>
+        <strong style="color: #ff6900; font-size: 40px; margin-left: 200px; font-family: italic;">Homeowner
+          Panel</strong>
+      </div>
+      <!-- [Mobile Media Block end] -->
+      <div class="ms-auto" >
+        <ul class="list-unstyled" >
+
+          <li class="dropdown pc-h-item header-user-profile" >
+            <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button"
+              aria-haspopup="false" data-bs-auto-close="outside" aria-expanded="false" style="text-decoration: none;">
+              <img src="{% static 'admin/assets/images/user/avatar-2.jpg' %}" alt="user-image" class="user-avtar">
+              <span>{{name}}</span>
+            </a>
+            <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown" style="background-color: #fbdbc4;">
+              <div class="dropdown-header">
+                <div class="d-flex mb-1">
+                  <div class="flex-shrink-0">
+                    <img src="{% static 'admin/assets/images/user/avatar-2.jpg' %}" alt="user-image"
+                      class="user-avtar wid-35">
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <h6 class="mb-1">{{name}}</h6>
+                    <span>{{homeownerid}}</span>
+                  </div>
+                  <!-- LOGOUT -->
+                  <a href="{% url 'homeownerlogout' %}" class="pc-head-link bg-transparent" style="text-decoration:none"><i
+                      class="ti ti-power text-danger"></i></a>
+                </div>
+              </div>
+
+              <div class="tab-content" id="mysrpTabContent">
+                <div class="tab-pane fade show active" id="drp-tab-1" role="tabpanel" aria-labelledby="drp-t1"
+                  tabindex="0">
+                  <a href="{% url  'homeownerpass' %}" class="dropdown-item">
+                    <i class="ti ti-edit-circle"></i>
+                    <span>Change Password</span>
+                  </a>
+
+                  <a href="{% url 'homeownerlogout' %}" class="dropdown-item">
+                    <i class="ti ti-power"></i>
+                    <span>Logout</span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- [ Header ] end -->
+
+
+
+  <!-- [ Main Content ] start -->
+  <div class="pc-container">
+    <div class="pc-content">
+      {% block homeowner %}
+
+      {% endblock %}
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+  <footer class="pc-footer">
+    <div class="footer-wrapper container-fluid">
+      <div class="row">
+        <div class="col-sm my-1">
+          <p class="m-0">Softpro India &#9829; developed by <a href="https://wa.me/9120271418" target="_blank">Raj
+              Aryan</a>.</p>
+        </div>
+        <div class="col-auto my-1">
+          <ul class="list-inline footer-link mb-0">
+            <li class="list-inline-item"><a href="{% url 'index' %}">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [Page Specific JS] start -->
+  <script src="{% static 'admin/assets/js/plugins/apexcharts.min.js' %}"></script>
+  <script src="{% static 'admin/assets/js/pages/dashboard-default.js' %}"></script>
+  <!-- [Page Specific JS] end -->
+  <!-- Required Js -->
+  <script src="{% static 'admin/assets/js/plugins/popper.min.js' %}"></script>
+  <script src="{% static 'admin/assets/js/plugins/simplebar.min.js' %}"></script>
+  <script src="{% static 'admin/assets/js/plugins/bootstrap.min.js' %}"></script>
+  <script src="{% static 'admin/assets/js/fonts/custom-font.js' %}"></script>
+  <script src="{% static 'admin/assets/js/pcoded.js' %}"></script>
+  <script src="{% static 'admin/assets/js/plugins/feather.min.js' %}"></script>
+
+
+
+
+
+  <script>layout_change('light');</script>
+
+
+
+
+  <script>change_box_container('false');</script>
+
+
+
+  <script>layout_rtl_change('false');</script>
+
+
+  <script>preset_change("preset-1");</script>
+
+
+  <script>font_change("Public-Sans");</script>
+
+  <script src="{% static 'admin/assets/js/plugins/sweetalert2.all.min.js' %}"></script>
+  {% if messages %}
+  {% for message in messages %}
+  <script>
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      }
+    });
+    Toast.fire({
+      icon: '{{message.tags}}',
+      title: '{{message}}'
+    });
+  </script>
+  {% endfor %}
+  {% endif %}
+</body>
+<!-- [Body] end -->
+
+</html>

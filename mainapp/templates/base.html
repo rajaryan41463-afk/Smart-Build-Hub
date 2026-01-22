@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+
+    </title>
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- nav start -->
+        <div class="row sticky-top">
+            <div class="col-sm-3 " style="background-color: rgba(0, 0, 0, 0.5);">
+                <p class="ms-5  text-light"><img src="{% static 'img/smartbuild_Logo_dark.png' %}" alt=""
+                        style="height: 80px ;"></p>
+            </div>
+            <div class="col-sm-7" style="background-color: rgba(0, 0, 0, 0.5);">
+                <ul class="nav mt-4 ms-5">
+                    <li class="nav-item ">
+                        <a href="/"
+                            class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'service' %}"
+                            style="text-decoration:none;">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'about' %}" style="text-decoration:none;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'project' %}"
+                            style="text-decoration:none;">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'contact' %}"
+                            style="text-decoration:none;">contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'register' %}"
+                            style="text-decoration:none;">Registation</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-2" style="background-color:rgba(0, 0, 0, 0.5);">
+                <button style="background-color: #ff6900; border: 0px; height: 40px; width: 80px;"
+                    class="rounded-2 mt-4 ms-5 text-light text-center"> <a href="{% url  'login' %}"
+                        style="text-decoration: none; color: aliceblue;">Sign in</a></button>
+            </div>
+        </div>
+        <!-- nav end -->
+
+
+        {% block main %}
+
+        {% endblock %}
+
+
+        <!-- footer start -->
+        <!-- Footer -->
+
+
+
+        <footer class="text-center text-lg-start bg-black text-muted row">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span><img src="{% static 'img/smartbuild_Logo_dark.png' %}" alt="" style="height: 70px;"></span>
+                    <h1 style="color: #ff6900;"><strong>SMART BUILD HUB</strong></h1>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div class="mt-5">
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-facebook-f fs-2 " style="color: #ff6900;"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-twitter fs-2" style="color: #ff6900;"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-google fs-2" style="color: #ff6900;"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-instagram fs-2" style="color: #ff6900;"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-linkedin fs-2" style="color: #ff6900;"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-github fs-2" style="color: #ff6900;"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-5 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4 text-light" style="color: #ff6900;">
+                                <i class="fas fa-gem me-3 fs-2 fa-bounce" style="color: #ff6900;"></i>Smart
+                                Build Hub
+                            </h6>
+                            <p class="text-light">
+                                Building your dreams on a foundation of trust and technology. Reliable designs,
+                                durable solutions — perfection in every project.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4 text-light">
+                                quick Links
+                            </h6>
+                            <p>
+                                <a href="{% url 'index' %}" class=" text-light" style="text-decoration: none;">Home</a>
+                            </p>
+                            <p>
+                                <a href="{% url 'service' %}" class=" text-light"
+                                    style="text-decoration: none;">Services</a>
+                            </p>
+                            <p>
+                                <a href="{% url 'project' %}" class="  text-light"
+                                    style="text-decoration: none;">Projects</a>
+                            </p>
+                            <p>
+                                <a href="{% url 'about' %}" class=" text-light" style="text-decoration: none;">About
+                                    Us</a>
+                            </p>
+                            <p>
+                                <a href="{% url 'contact' %}" class=" text-light"
+                                    style="text-decoration: none;">Contact</a>
+                            </p>
+                            <p>
+                                <a href="#!" class=" text-light" style="text-decoration: none;">Blog</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4 t text-light">
+                                Ous services
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-light " style="text-decoration: none;">Project
+                                    Management</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-light" style="text-decoration: none;">Architecture
+                                    Planning</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-light" style="text-decoration: none;">Contractor
+                                    Collabration</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-light" style="text-decoration: none;">Supply Chain
+                                    Solutions</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-light" style="text-decoration: none;">Sustainability
+                                    Consulting</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-light" style="text-decoration: none;">Client Portal
+                                    Access</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4 text-light">Contact Us</h6>
+                            <p class="text-light"><i class="fas fa-home me-3" style="color: #ff6900;"></i>
+                                Rajendra Nagar orai jalaun, <span class="ms-5 text-light">Uttar pradesh, india
+                                </span></p>
+                            <p class="text-light">
+                                <i class="fas fa-envelope me-3" style="color: #ff6900;"></i>
+                                rajaryan41463@gmail.com
+                            </p>
+                            <p class="text-light"><i class="fas fa-phone me-3" style="color: #ff6900;"></i>+91
+                                9120271418</p>
+                            <p class="text-light"><b>Subscribe to our newsletter</b></p>
+                            <form action="">
+                                <p> <input type="email" placeholder="Enter Your Email" class="form-control">
+                                    <button style="background-color: #ff6900;"
+                                        class="form-control mt-2 btn">send</i></button>
+                                </p>
+                            </form>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+            <!-- map s -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57378.28063357306!2d79.41793335456885!3d25.99614771428494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399d7edf1179b633%3A0x12b04864e0a7107c!2sOrai%2C%20Uttar%20Pradesh%20285001!5e0!3m2!1sen!2sin!4v1753532024939!5m2!1sen!2sin"
+                width="100" height="450" style="border-radius:10px 10px 10px 10px; ;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- map end -->
+            <!-- Copyright -->
+            <div class="text-center p-4 text-light" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2025 SmartBuild Hub. Designed and Developed by <a href="https://www.linkedin.com/in/raj-aryan-679b06358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><span style="color: yellow;">Raj Aryan.</span></a>
+                <a class="text-reset fw-bold" href="https://mdbootstrap.com/"></a>
+            </div>
+            <!-- Copyright -->
+
+
+        </footer>
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <!-- footer end -->
+
+
+
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

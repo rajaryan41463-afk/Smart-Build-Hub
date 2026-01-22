@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin login</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" style="background-color: #ff6900; height: 100vh;">
+            <div class="col-sm-4 mx-auto my-auto">
+                <div class="card p-4">
+                    <div class="text-center">
+                        <img src="{% static 'img/Logo.png' %}" style="height:100px;" alt="">
+                        <h4 style=" font-family: italic; color: #ff6900; margin-top: 50px;"><strong>WELCOME ADMIN</strong></h4>
+                        {% if messages %}
+                        {% for m in messages %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{m}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                            </div>
+                        {% endfor%}
+                        {% endif %}
+                        </div>
+                        <form method="post" class="mt-4">
+                            {% csrf_token %}
+                            <div class="form-floating mb-3">
+                                
+                                <input type="text" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com" name="username">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" name="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                                <button type="submit" class="btn brt-dark mt-4 w-100" style="background-color: #ff6900;"> Login</button>
+                                
+                            </div>
+                            <p class="mt-5  "> <span class="me-5">&copy; softpro developed by <a href="" style="text-decoration: none; color: #ff6900;"><b>Mr.Raj Aryan</b></a>.</span><a href="" style="margin-right: 2px;"> Back to home</a></p>
+                        </form>
+                    </div>
+                    
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+
+</html>

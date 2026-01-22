@@ -1,0 +1,61 @@
+{% extends 'homeownerbase.html' %}
+
+{% block homeowner %}
+<div class="row" >
+    <div class="col-sm-12">
+        <h1>
+            my project
+        </h1>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>S.Name</th>
+                    <th>Project Name</th>
+                    <th>Duration( in days)</th>
+                    <th>Budget</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Progress (in %)</th>
+                    <th>Plot size</th>
+                    <th>House Type</th>
+                    <th>No.Of Flor</th>
+                    <th>Basement</th>
+                    <th>parking</th>
+                    <th>Bedroom</th>
+                    <th>Bathroom</th>
+                    <th>Kitchen on each Flor</th>
+                    <th>Outdor door area</th>
+                    <th>Action</th>
+                </tr>
+                {% for p in projects %}
+                <tr>
+                    
+                    <td>{{forloop.counter}}</td>
+                    <td>{{p.projectname}}</td>
+                    <td>{{p.duration}}</td>
+                    <td>{{p.budget}}</td>
+                    <td>{{p.location}}</td>
+                    <td>{{p.progress}}</td>
+                    <td>{{p.status}}</td>                    
+                    <td>{{p.plot_size}}</td>
+                    <td>{{p.house_type}}</td>
+                    <td>{{p.num_floors}}</td>
+                    <td>{{p.basement}}</td>
+                    <td>{{p.parking_required}}</td>
+                    <td>{{p.bathrooms}}</td>
+                    <td>{{p.bedrooms}}</td>
+                    <td>{{p.kitchen_each_floor}}</td>
+                    <td>{{p.additional_rooms}}</td>
+                    <td>{{p.outdoor_areas}}</td>
+                    <td> <a href="{% url 'homeownerviewapplications' id=p.id%}" class="btn btn-primary">View Contractor Applicaton</a></td>
+                </tr>
+                {% endfor %}
+
+
+            </table>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

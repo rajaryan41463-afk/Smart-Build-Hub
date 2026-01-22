@@ -1,0 +1,28 @@
+{% extends 'homeownerbase.html' %}
+
+{% block homeowner %}
+<h2>homeowner completed  projects</h2>
+<table class="table">
+    <tr>
+        <th>S.No</th>
+        <th>Project Name</th>
+        <th>Contractor Name</th>
+        <th>Status</th>
+        
+    </tr>
+    {% for p in projects %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{p.projectname}}</td>
+        <td>{{p.contractor.name}}</td>
+        <td>
+            <span class="btn btn-success"> {{p.contractor.name}}</span>
+
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

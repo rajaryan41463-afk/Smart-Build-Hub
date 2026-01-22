@@ -1,0 +1,51 @@
+{% extends 'contractorbase.html' %}
+{% load static %}
+{% block contractor %}
+  <style>
+   
+    .change-password-form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 40%;
+    }
+    .change-password-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .change-password-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .change-password-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: orangered;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+
+
+  <form class="change-password-form mx-auto" method="post" >
+    <img src="{% static 'img/Logo.png' %}" alt="" style="height: 50px; margin-left: 160px;" > <br><br>
+    {% csrf_token %}
+   <br> <h2 style="color: #ff6900; font-family: italic;">Change Password</h2>
+
+    <input type="password" name="oldpwd" placeholder="Current Password" required>
+
+    <input type="password" name="newpwd" placeholder="New Password" required>
+
+    <input type="password" name="confirmpwd" placeholder="Confirm New Password" required>
+
+    <button type="submit">Change Password</button><br> <br> <br>
+    <p>&copy;Softpro developed by.<a href="" style="text-decoration: none; color: rgb(255, 0, 0); "><b>Raj Aryan.</b></a><a href="" style="margin-left: 150px;"> Back to Home</a> </p>
+  </form>
+
+{% endblock %}

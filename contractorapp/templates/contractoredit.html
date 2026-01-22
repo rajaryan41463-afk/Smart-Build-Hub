@@ -1,0 +1,49 @@
+{% extends 'contractorbase.html' %}
+{% load static %}
+
+contractor Dashboard
+{% block contractor %}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Edit Profile</h1>
+
+
+    </div>
+</div>
+<form method="POST" class="row g-4" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div class="col-sm-6">
+        <label for="n" class="form-label"> Name</label>
+        <input type="text" name="name" id="n" class="form-control" value="{{contractor.name}}">
+    </div>
+
+    <div class="col-sm-6">
+        <label for="cn" class="form-label"> Contact NO:</label>
+        <input type="text" name="contactno" id="cn" class="form-control" value="{{contractor.contactno}}">
+    </div>
+
+    <div class="col-sm-6">
+        <label for="em" class="form-label"> Email</label>
+        <input type="text" name="email" id="em" class="form-control" value="{{contractor.email}}">
+    </div>
+    <div class="col-sm-6">
+        <label for="pro" class="form-label">Choose profile picture</label>
+        <input type="file" name="profile" id="pro" class="form-control">
+    </div>
+    <div class="col-sm-12">
+        <label for="ad" class="form-label"> Enter full address</label>
+        <textarea name="address" id="address" class="form-control" >{{contractor.address}}</textarea>
+    </div>
+    <div class="col-sm-12">
+        <label for="bio" class="form-label">Bio</label>
+        <textarea name="bio" id="bio" class="form-control">{{contractor.address}}</textarea> <br>
+    
+    <button type="submit" class="btn btn-success text-center" >Update</button>
+        </div>
+</form>
+
+
+
+{% endblock %}

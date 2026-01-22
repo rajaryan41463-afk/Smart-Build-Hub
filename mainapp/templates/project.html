@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Register here
+{% endblock %}
+
+{% block main %}   
+<div class="row  " style="height: 80vh; background-color: black;">
+    <div class="col-sm-10 mx-auto">
+        <p><h6 style="color: #ff6900;  margin-top: 100px;">----- EXCELLENCE IN CONSTRUCTION</h6></p>
+        <p><h1 class="text-light mt-3" style="font-size: 60px;"><strong>Our Featured Projects</strong></h1></p>
+        <p style="font-size: large; color: white;  margin-top: 20px;">Browse our portfolio of exceptional construction projects spanning commercial, residential, and <br>public sectors. Each project reflects our commitment to quality and innovation.</p>
+        <div class="row " style="margin-top: 100px;">
+            <div class="card" style="background-color: #1a1a36; width: 250px; height: 120px;  ">
+                <h1 style="color: #ff6900;" class="mx-auto mt-3"><strong>250+</strong></h1>
+                <p class="mx-auto text-light">Projects Completed</p>
+            </div>
+
+            <div class="card" style="background-color: #1a1a36; width: 250px; height: 120px;  margin-left: 50px;">
+                <h1 style="color: #ff6900;" class="mx-auto mt-3"><strong>30+</strong></h1>
+                <p class="mx-auto text-light">Years Experience</p>
+            </div>
+
+            <div class="card" style="background-color: #1a1a36; width: 250px; height: 120px;  margin-left: 50px;">
+                <h1 style="color: #ff6900;" class="mx-auto mt-3"><strong>120+</strong></h1>
+                <p class="mx-auto text-light">Expert Team Members</p>
+            </div>
+
+            <div class="card" style="background-color: #1a1a36; width: 250px; height: 120px;  margin-left: 50px; ">
+                <h1 style="color: #ff6900;" class="mx-auto mt-3"><strong>98%</strong></h1>
+                <p class="mx-auto text-light">Client Satisfaction</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row"  >
+    <div class="col-sm-12">
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true" >
+  <div class="carousel-inner" >
+    <div class="carousel-item active">
+      <img src="{% static 'img/best.jpg' %}" class="d-block w-100" alt="  " style="height:500px; width: 100%;">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/best1.webp' %}" class="d-block w-100" alt="..." style="height:500px;">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/best3.jpg' %}" class="d-block w-100" alt="..." style="height:500px;">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+ </div>
+</div>
+</div>
+
+{% endblock %}
